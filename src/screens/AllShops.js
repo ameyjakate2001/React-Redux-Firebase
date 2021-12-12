@@ -7,7 +7,7 @@ import { Row, Col } from 'react-bootstrap'
 
 const AllShops = () => {
   const dispatch = useDispatch()
-  const { loading, error, shops } = useSelector((state) => state.shopList)
+  const { loading, shops } = useSelector((state) => state.shopList)
   useEffect(() => {
     dispatch(getShopsAction())
   }, [dispatch])

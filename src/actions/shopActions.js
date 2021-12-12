@@ -82,7 +82,7 @@ const getFilteredShopAction = (parameter, value) => async (dispatch) => {
 
         // console.log(await getDocs(data))
       } else {
-        data = query(ShopCollectionRef, where('Opening_date', '<', currentDate))
+        data = query(ShopCollectionRef, where('Opening_date', '>', currentDate))
         // console.log(await getDocs(data))
       }
       const querySnapshot = await getDocs(data)

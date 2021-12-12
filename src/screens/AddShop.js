@@ -23,7 +23,7 @@ const AddShop = () => {
     console.log(getDifferenceInDays(opening, closing))
     if (getDifferenceInDays(opening, closing)) {
       function allLetter() {
-        var letters = /^[A-Za-z]+$/
+        var letters = /[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/
         if (Name.match(letters)) {
           return true
         } else {

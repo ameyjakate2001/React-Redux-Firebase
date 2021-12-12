@@ -10,7 +10,6 @@ const getShopReducer = (state = {}, action) => {
       return { loading: false, error: action.payload }
 
     case 'DELETE_SHOP_SUCCESS':
-      console.log(action.payload)
       return {
         loading: false,
         shops: state.shops.filter((shop) => shop.id !== action.payload.id),

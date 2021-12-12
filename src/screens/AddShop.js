@@ -22,13 +22,24 @@ const AddShop = () => {
     }
     console.log(getDifferenceInDays(opening, closing))
     if (getDifferenceInDays(opening, closing)) {
-      dispatch(AddShopAction(Name, Area, Category, OpeningDate, ClosingDate))
-      setName('')
-      setArea('')
-      setCategory('')
-      setOpeningDate('')
-      setClosingDate('')
-      setMsg('')
+      function allLetter() {
+        var letters = /^[A-Za-z]+$/
+        if (Name.match(letters)) {
+          return true
+        } else {
+          alert('only alphabets allowed In name Field')
+          return false
+        }
+      }
+      if (allLetter()) {
+        dispatch(AddShopAction(Name, Area, Category, OpeningDate, ClosingDate))
+        setName('')
+        setArea('')
+        setCategory('')
+        setOpeningDate('')
+        setClosingDate('')
+        setMsg('')
+      }
     } else {
       setMsg('Closing Date is coming before Opening Date')
     }
@@ -46,7 +57,9 @@ const AddShop = () => {
             placeholder='Name'
             aria-label='Username'
             aria-describedby='basic-addon1'
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => {
+              setName(e.target.value)
+            }}
             value={Name}
             required
           />
